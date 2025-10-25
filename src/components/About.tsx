@@ -68,7 +68,7 @@ const About = () => {
                   <h4 className="font-semibold text-foreground">Junior Data Analyst</h4>
                   <p className="text-sm text-muted-foreground">Jun 2022 – Mar 2023</p>
                   <p className="text-muted-foreground text-sm mt-1">
-                    Led data analysis projects and dashboard development
+                    Led data analysis projects and dashboard development hasofhojfojawohf0jpfw a 0wfh awojfjh f0af0aww jf0j0fjajdf0ahw0fjh
                   </p>
                 </div>
                 <div>

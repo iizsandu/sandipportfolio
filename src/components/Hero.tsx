@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, FileText } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
 
 const Hero = () => {
@@ -19,12 +19,11 @@ const Hero = () => {
               Hi, I'm <span className="text-primary">Sandip Shaw</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-6">
-              Data Science Enthusiast | Dashboard Builder | AI Project Developer
+              Upcomming Data Scientist | Experienced Analyst
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Passionate about transforming data into actionable insights and building intelligent solutions
-              that solve real-world problems. Specialized in machine learning, natural language processing,
-              and creating interactive data visualizations.
+              Experienced Data Analyst with a strong foundation in data science principles and algorithms looking to transition into a Data Scientist role. I love playing with data to uncover insights and make data-driven decisions.
+              Please explore my portfolio to see my projects and skills.
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
               <Button
@@ -45,7 +44,7 @@ const Hero = () => {
             </div>
             <div className="flex gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/iizsandu"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -53,7 +52,7 @@ const Hero = () => {
                 <Github size={24} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/sandip8017shaw"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -61,7 +60,15 @@ const Hero = () => {
                 <Linkedin size={24} />
               </a>
               <a
-                href="mailto:sandip@example.com"
+                href="https://medium.com/@sandip8017shaw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <FileText size={24} />
+              </a>
+              <a
+                href="mailto:sandip8017shaw@gmail.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail size={24} />
