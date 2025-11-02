@@ -22,7 +22,7 @@ const Navbar = () => {
     }
   };
 
-  const navItems = ["home", "about", "services", "portfolio", "contact"];
+  const navItems = ["home", "about", "portfolio", "contact"];
 
   return (
     <nav

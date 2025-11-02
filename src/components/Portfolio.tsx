@@ -16,7 +16,8 @@ const Portfolio = () => {
         "Intelligent route planning system that uses NLP and GIS to recommend alternate routes avoiding high-crime zones. Combines real-time data analysis with geospatial intelligence for safer navigation.",
       image: projectRoutes,
       tags: ["AI", "NLP", "GIS"],
-      category: "ai"
+      category: "ai",
+      link: "https://github.com/iizsandu"
     },
     {
       title: "Plant Disease Detection",
@@ -24,7 +25,8 @@ const Portfolio = () => {
         "Convolutional Neural Network (CNN) based system for automated plant disease detection from images. Helps farmers identify diseases early with high accuracy, enabling timely intervention.",
       image: projectPlant,
       tags: ["Computer Vision", "CNN", "Deep Learning"],
-      category: "ai"
+      category: "ai",
+      link: "https://github.com/iizsandu"
     },
     {
       title: "Twitter Sentiment Analysis",
@@ -32,7 +34,8 @@ const Portfolio = () => {
         "Real-time sentiment analysis of tweets related to the Russia-Ukraine conflict. Employs NLP techniques to gauge public opinion, track sentiment trends, and visualize emotional responses.",
       image: projectSentiment,
       tags: ["NLP", "Sentiment Analysis", "Data Visualization"],
-      category: "nlp"
+      category: "nlp",
+      link: "https://github.com/iizsandu"
     }
   ];
 
@@ -40,7 +43,8 @@ const Portfolio = () => {
     { id: "all", label: "All Projects" },
     { id: "ai", label: "AI" },
     { id: "nlp", label: "NLP" },
-    { id: "visualization", label: "Data Visualization" }
+    { id: "visualization", label: "Data Visualization" },
+    { id: "Deep Learning", label: "Deep Learning" }
   ];
 
   const filteredProjects = filter === "all" 
@@ -71,34 +75,42 @@ const Portfolio = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden hover:shadow-large transition-all duration-300 hover:-translate-y-2 group animate-fade-in"
+              <a
+              key={index}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, idx) => (
-                      <Badge key={idx} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
+                <Card
+                  key={index}
+                  className="overflow-hidden hover:shadow-large transition-all duration-300 hover:-translate-y-2 group animate-fade-in"
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
-                </div>
-              </Card>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag, idx) => (
+                        <Badge key={idx} variant="secondary" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </Card>
+              </a>
             ))}
           </div>
         </div>

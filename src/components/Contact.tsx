@@ -69,25 +69,25 @@ const Contact = () => {
     {
       icon: <Mail className="h-5 w-5" />,
       label: "Email",
-      value: "sandip@example.com",
-      link: "mailto:sandip@example.com"
+      value: "sandip8017shaw@gmail.com",
+      link: "mailto:sandip8017shaw@gmail.com"
     },
     {
       icon: <Github className="h-5 w-5" />,
       label: "GitHub",
-      value: "github.com/sandipshaw",
-      link: "https://github.com"
+      value: "https://github.com/iizsandu",
+      link: "https://github.com/iizsandu"
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: "LinkedIn",
-      value: "linkedin.com/in/sandipshaw",
-      link: "https://linkedin.com"
+      value: "www.linkedin.com/in/sandip8017shaw",
+      link: "https://linkedin.com/in/sandip8017shaw"
     },
     {
       icon: <MapPin className="h-5 w-5" />,
       label: "Location",
-      value: "India",
+      value: "Pune, India",
       link: null
     }
   ];
