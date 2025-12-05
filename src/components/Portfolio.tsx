@@ -17,7 +17,7 @@ const Portfolio = () => {
       image: projectRoutes,
       tags: ["AI", "NLP", "GIS"],
       category: "ai",
-      link: "https://github.com/iizsandu"
+      link: "https://github.com/iizsandu/AI-Powered-Alternate-Route-Recommendation"
     },
     {
       title: "Plant Disease Detection",
@@ -35,7 +35,7 @@ const Portfolio = () => {
       image: projectSentiment,
       tags: ["NLP", "Sentiment Analysis", "Data Visualization"],
       category: "nlp",
-      link: "https://github.com/iizsandu"
+      link: "https://github.com/iizsandu/Twittter_Sentiment_Analysis"
     }
   ];
 
