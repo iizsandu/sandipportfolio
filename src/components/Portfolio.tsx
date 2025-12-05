@@ -20,13 +20,13 @@ const Portfolio = () => {
       link: "https://github.com/iizsandu/AI-Powered-Alternate-Route-Recommendation"
     },
     {
-      title: "Plant Disease Detection",
+      title: "Urban Greenery Optimization",
       description:
-        "Convolutional Neural Network (CNN) based system for automated plant disease detection from images. Helps farmers identify diseases early with high accuracy, enabling timely intervention.",
+        "A deep-learning- and GIS-based workflow to automatically detect, map, and optimize urban green spaces using Sentinel-2 satellite imagery. A U-Net model performs semantic segmentation to identify vegetation, and GIS layers such as NDVI, NDBI, slope, and land surface temperature are integrated to assess accessibility, suitability, and priority zones for new green-space development. The approach helps identify areas with insufficient green cover and supports data-driven urban planning to reduce heat islands and improve environmental sustainability. ",
       image: projectPlant,
       tags: ["Computer Vision", "CNN", "Deep Learning"],
       category: "ai",
-      link: "https://github.com/iizsandu"
+      link: "https://github.com/iizsandu/UrbanGreeneryOptimization"
     },
     {
       title: "Twitter Sentiment Analysis",
