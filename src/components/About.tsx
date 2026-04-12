@@ -22,15 +22,11 @@ const About = () => {
 
           <Card className="p-8 mb-12 shadow-medium">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              I'm a dedicated Data Science professional with a strong foundation in statistical analysis,
-              machine learning, and artificial intelligence. My journey in data science has been driven by
-              a passion for uncovering patterns in data and building solutions that make a real-world impact.
+              Data Science postgraduate with hands-on experience in building end-to-end data and AI solutions across analytics, machine learning, and NLP. Skilled in transforming raw, unstructured data into actionable insights using Python, SQL, and visualization tools like Tableau.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              With expertise spanning from traditional machine learning to cutting-edge deep learning
-              applications, I specialize in creating end-to-end data solutions, from exploratory analysis
-              to production-ready AI systems. I'm particularly interested in applying NLP and computer vision
-              techniques to solve complex business challenges.
+              Worked on real-world projects including an AI-powered Crime-Aware Route Recommendation System, integrating geospatial analysis, NLP pipelines, and predictive modeling to solve practical problems. Experienced in data cleaning, transformation, and building scalable data pipelines using modern tools and databases like MongoDB.
+              Strong interest in developing production-oriented systems that combine data analysis with machine learning and LLMs to deliver intelligent, real-world applications. Continuously exploring advanced areas such as AI agents, multimodal systems, and applied machine learning.
             </p>
           </Card>
 
