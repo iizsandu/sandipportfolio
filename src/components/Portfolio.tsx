@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import projectRoutes from "@/assets/project-routes.jpg";
 import projectPlant from "@/assets/project-plant.jpg";
 import projectSentiment from "@/assets/project-sentiment.jpg";
+import projectRag from "@/assets/project-rag.jpg";
 
 const Portfolio = () => {
   const [filter, setFilter] = useState("all");
@@ -36,6 +37,15 @@ const Portfolio = () => {
       tags: ["NLP", "Sentiment Analysis", "Data Visualization"],
       category: "nlp",
       link: "https://github.com/iizsandu/Twittter_Sentiment_Analysis"
+    },
+    {
+      title: "RAG PDF — Ask Your Documents",
+      description:
+        "An end-to-end Retrieval-Augmented Generation pipeline that ingests PDF documents, chunks and embeds them using Jina AI, stores vectors in Qdrant, and answers natural language questions grounded in the document's content via an LLM. Built with FastAPI, Inngest for event-driven orchestration, and a Streamlit UI.",
+      image: projectRag,
+      tags: ["RAG", "AI", "NLP", "Vector Search"],
+      category: "ai",
+      link: "https://github.com/iizsandu/RAG-PDF"
     }
   ];
 
