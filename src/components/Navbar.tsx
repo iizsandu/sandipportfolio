@@ -22,7 +22,14 @@ const Navbar = () => {
     }
   };
 
-  const navItems = ["home", "about", "portfolio", "contact"];
+  const navItems = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+    { id: "education", label: "Education" },
+    { id: "contact", label: "Contact" },
+  ];
 
   return (
     <nav
@@ -43,12 +50,12 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <Button
-                key={item}
+                key={item.id}
                 variant="ghost"
-                onClick={() => scrollToSection(item)}
-                className="capitalize text-sm font-medium hover:text-primary transition-colors"
+                onClick={() => scrollToSection(item.id)}
+                className="text-sm font-medium hover:text-primary transition-colors"
               >
-                {item}
+                {item.label}
               </Button>
             ))}
           </div>
@@ -68,12 +75,12 @@ const Navbar = () => {
             <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <Button
-                  key={item}
+                  key={item.id}
                   variant="ghost"
-                  onClick={() => scrollToSection(item)}
-                  className="capitalize justify-start"
+                  onClick={() => scrollToSection(item.id)}
+                  className="justify-start"
                 >
-                  {item}
+                  {item.label}
                 </Button>
               ))}
             </div>

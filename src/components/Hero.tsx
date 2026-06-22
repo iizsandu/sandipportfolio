@@ -26,16 +26,24 @@ const Hero = () => {
               Data Scientist &nbsp;|&nbsp; ML · NLP · Computer Vision
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              I build end-to-end ML systems — from crime-aware route planners to RAG-powered document Q&A.
-              MSc Data Science candidate with hands-on experience in Python, deep learning, and geospatial AI.
+              Data Scientist & ML Engineer with 2+ years delivering production-grade AI — deployed RAG pipelines, automated data workflows, and crime-aware route planners on Azure. MSc Data Science, Class Topper (CGPA 8.82), graduating August 2026.
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
               <Button
                 size="lg"
-                onClick={() => scrollToSection("portfolio")}
+                onClick={() => scrollToSection("projects")}
                 className="group"
               >
                 View Projects
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => scrollToSection("experience")}
+                className="group"
+              >
+                View Experience
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button
