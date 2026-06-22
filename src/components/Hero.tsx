@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin, Mail, FileText } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, FileText, Download } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
 
 const Hero = () => {
@@ -15,15 +15,19 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full mb-4">
+              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              Open to Data Scientist Roles
+            </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-4 text-foreground">
               Hi, I'm <span className="text-primary">Sandip Shaw</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-6">
-              Upcomming Data Scientist | Experienced Analyst
+              Data Scientist &nbsp;|&nbsp; ML · NLP · Computer Vision
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Experienced Data Analyst with a strong foundation in data science principles and algorithms looking to transition into a Data Scientist role. I love playing with data to uncover insights and make data-driven decisions.
-              Please explore my portfolio to see my projects and skills.
+              I build end-to-end ML systems — from crime-aware route planners to RAG-powered document Q&A.
+              MSc Data Science candidate with hands-on experience in Python, deep learning, and geospatial AI.
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
               <Button
@@ -31,12 +35,22 @@ const Hero = () => {
                 onClick={() => scrollToSection("portfolio")}
                 className="group"
               >
-                View Portfolio
+                View Projects
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
+                asChild
+              >
+                <a href="/resume.pdf" download>
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Resume
+                </a>
+              </Button>
+              <Button
+                size="lg"
+                variant="ghost"
                 onClick={() => scrollToSection("contact")}
               >
                 Contact Me

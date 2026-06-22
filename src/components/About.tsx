@@ -1,14 +1,39 @@
 import { Card } from "@/components/ui/card";
-import { GraduationCap, Briefcase, Code2, Brain, BarChart, Map } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { GraduationCap, Briefcase, Code2, Brain, BarChart, Map, Database, Cpu } from "lucide-react";
 
 const About = () => {
-  const skills = [
-    { icon: <Code2 />, name: "Python" },
-    { icon: <Brain />, name: "Machine Learning" },
-    { icon: <Brain />, name: "NLP" },
-    { icon: <Code2 />, name: "Computer Vision" },
-    { icon: <BarChart />, name: "Data Visualization" },
-    { icon: <Map />, name: "GIS" }
+  const skillGroups = [
+    {
+      label: "Languages & Tools",
+      icon: <Code2 className="h-4 w-4" />,
+      skills: ["Python", "SQL", "Bash"]
+    },
+    {
+      label: "ML / AI",
+      icon: <Brain className="h-4 w-4" />,
+      skills: ["scikit-learn", "PyTorch", "LLMs", "RAG", "NLP"]
+    },
+    {
+      label: "Computer Vision",
+      icon: <Cpu className="h-4 w-4" />,
+      skills: ["U-Net", "CNN", "Semantic Segmentation", "OpenCV"]
+    },
+    {
+      label: "Data & Visualization",
+      icon: <BarChart className="h-4 w-4" />,
+      skills: ["Pandas", "NumPy", "Tableau", "Matplotlib", "Recharts"]
+    },
+    {
+      label: "Databases & APIs",
+      icon: <Database className="h-4 w-4" />,
+      skills: ["MongoDB", "Qdrant", "FastAPI", "Streamlit"]
+    },
+    {
+      label: "GIS & Geospatial",
+      icon: <Map className="h-4 w-4" />,
+      skills: ["QGIS", "Sentinel-2", "NDVI/NDBI", "GeoPandas"]
+    }
   ];
 
   return (
@@ -63,31 +88,40 @@ const About = () => {
                 <div>
                   <h4 className="font-semibold text-foreground">Junior Data Analyst</h4>
                   <p className="text-sm text-muted-foreground">Jun 2022 – Mar 2023</p>
-                  <p className="text-muted-foreground text-sm mt-1">
-                    Led data analysis projects and dashboard development hasofhojfojawohf0jpfw a 0wfh awojfjh f0af0aww jf0j0fjajdf0ahw0fjh
-                  </p>
+                  <ul className="text-muted-foreground text-sm mt-1 space-y-1 list-disc list-inside">
+                    <li>Built Tableau dashboards used by 3+ business teams for weekly reporting</li>
+                    <li>Automated recurring reports with Python, cutting manual effort by ~40%</li>
+                    <li>Cleaned and transformed datasets of 500K+ rows using Pandas and SQL</li>
+                  </ul>
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground">Data Analyst Intern</h4>
                   <p className="text-sm text-muted-foreground">Aug 2021 – Feb 2022</p>
-                  <p className="text-muted-foreground text-sm mt-1">
-                    Contributed to data collection and visualization initiatives
-                  </p>
+                  <ul className="text-muted-foreground text-sm mt-1 space-y-1 list-disc list-inside">
+                    <li>Collected and cleaned 100K+ rows of survey and transactional data</li>
+                    <li>Designed visualizations that supported product strategy decisions</li>
+                  </ul>
                 </div>
               </div>
             </Card>
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold text-center mb-8">Core Skills</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {skills.map((skill, index) => (
-                <Card
-                  key={index}
-                  className="p-4 flex items-center space-x-3 hover:shadow-medium transition-all hover:-translate-y-1"
-                >
-                  <div className="text-primary">{skill.icon}</div>
-                  <span className="font-medium">{skill.name}</span>
+            <h3 className="text-2xl font-semibold text-center mb-8">Technical Skills</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {skillGroups.map((group, index) => (
+                <Card key={index} className="p-5 hover:shadow-medium transition-all hover:-translate-y-1">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="text-primary">{group.icon}</div>
+                    <span className="font-semibold text-sm text-foreground">{group.label}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {group.skills.map((skill, idx) => (
+                      <Badge key={idx} variant="secondary" className="text-xs">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
                 </Card>
               ))}
             </div>

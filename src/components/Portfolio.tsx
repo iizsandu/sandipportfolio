@@ -23,7 +23,7 @@ const Portfolio = () => {
     {
       title: "Urban Greenery Optimization",
       description:
-        "A deep-learning- and GIS-based workflow to automatically detect, map, and optimize urban green spaces using Sentinel-2 satellite imagery. A U-Net model performs semantic segmentation to identify vegetation, and GIS layers such as NDVI, NDBI, slope, and land surface temperature are integrated to assess accessibility, suitability, and priority zones for new green-space development. The approach helps identify areas with insufficient green cover and supports data-driven urban planning to reduce heat islands and improve environmental sustainability. ",
+        "U-Net semantic segmentation on Sentinel-2 satellite imagery to detect and map urban green spaces. Integrates NDVI, NDBI, and land surface temperature layers to identify heat-island zones and guide data-driven urban planning.",
       image: projectPlant,
       tags: ["Computer Vision", "CNN", "Deep Learning"],
       category: "ai",
