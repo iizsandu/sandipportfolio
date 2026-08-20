@@ -1,98 +1,108 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Briefcase } from "lucide-react";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+
+type ExperienceItem = {
+  role: string;
+  company: string;
+  period: string;
+  location: string;
+  bullets: string[];
+};
+
+const experiences: ExperienceItem[] = [
+  {
+    role: "Data Scientist Intern · AI Developer",
+    company: "Cell Hub MS",
+    period: "Jan 2026 – Present",
+    location: "Pune",
+    bullets: [
+      "Built an event-driven data pipeline across nine business domains.",
+      "Delivered a document-question-answering tool for production users.",
+      "Worked in an agile team through planning, reviews, and documentation.",
+    ],
+  },
+  {
+    role: "Data Analyst",
+    company: "Innover Digital",
+    period: "Jun 2022 – Apr 2023",
+    location: "Kolkata",
+    bullets: [
+      "Analysed logistics data for US clients to improve route efficiency.",
+      "Automated recurring reporting with Python and Excel.",
+      "Built dashboards and presented findings to stakeholders.",
+    ],
+  },
+  {
+    role: "Data Analyst Intern",
+    company: "Krop Gains",
+    period: "Aug 2021 – Mar 2022",
+    location: "Remote",
+    bullets: [
+      "Prepared large agricultural datasets from multiple web sources.",
+      "Built a crop-disease image classifier.",
+      "Created Tableau dashboards for performance analysis.",
+    ],
+  },
+];
+
+const cardThemes = [
+  "bg-orange-50/30",
+  "bg-teal-50/20",
+  "bg-sky-50/20",
+];
 
 const Experience = () => {
-  const experiences = [
-    {
-      role: "Data Scientist Intern · AI Developer",
-      company: "Cell Hub MS",
-      period: "Jan 2026 – Present",
-      location: "Pune",
-      current: true,
-      bullets: [
-        "Engineered an event-driven data pipeline with 95% mapping accuracy, auto-parsing CSVs into a 50+ table MySQL schema across 9 business domains",
-        "Delivered a RAG querying pipeline with 90%+ response relevance for 20–100 production users, from design to deployment in 1–2 months",
-        "Collaborated in a 5+ member agile team across sprint planning, code reviews, and technical documentation",
-      ],
-    },
-    {
-      role: "Data Analyst",
-      company: "Innover Digital",
-      period: "Jun 2022 – Apr 2023",
-      location: "Kolkata",
-      current: false,
-      bullets: [
-        "Analysed truck logistics data for 10+ US clients, contributing to an estimated 10–20% improvement in route efficiency",
-        "Automated data pipelines with Python and Advanced Excel, saving 12+ hours of recurring reporting effort per week",
-        "Built 10+ Power BI and Tableau dashboards adopted by US clients; presented findings to management stakeholders",
-      ],
-    },
-    {
-      role: "Data Analyst Intern",
-      company: "Krop Gains",
-      period: "Aug 2021 – Mar 2022",
-      location: "Remote",
-      current: false,
-      bullets: [
-        "Scraped and processed 100 GB of Indian agricultural data from multiple web sources into a uniform schema",
-        "Built a CNN crop disease classifier trained on 6,000 augmented images across 12 categories, achieving 79% test accuracy",
-        "Created 20+ Tableau dashboards; analysis revealed an average 3.65% performance spike across monitored parameters",
-      ],
-    },
-  ];
+  const [selectedExperience, setSelectedExperience] = useState<ExperienceItem | null>(null);
 
   return (
-    <section id="experience" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Experience</h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg">
-            My professional journey and work history
-          </p>
-
-          <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-px bg-border hidden md:block" />
-
-            <div className="space-y-8">
-              {experiences.map((exp, index) => (
-                <div key={index} className="relative md:pl-20">
-                  <div className="absolute left-6 top-6 w-4 h-4 rounded-full border-2 border-primary bg-background hidden md:block" />
-                  <Card className="p-6 shadow-medium hover:shadow-large transition-all duration-300">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
-                      <div>
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <h3 className="text-lg font-semibold text-foreground">{exp.role}</h3>
-                          {exp.current && (
-                            <Badge className="text-xs bg-green-500/10 text-green-600 border-0">
-                              Current
-                            </Badge>
-                          )}
-                        </div>
-                        <div className="flex items-center gap-2 mt-1">
-                          <Briefcase className="h-4 w-4 text-primary shrink-0" />
-                          <span className="text-primary font-medium text-sm">{exp.company}</span>
-                          <span className="text-muted-foreground text-sm">· {exp.location}</span>
-                        </div>
-                      </div>
-                      <span className="text-sm text-muted-foreground whitespace-nowrap">{exp.period}</span>
-                    </div>
-                    <ul className="space-y-1.5 mt-3">
-                      {exp.bullets.map((bullet, idx) => (
-                        <li key={idx} className="flex gap-2 text-sm text-muted-foreground">
-                          <span className="text-primary mt-1 shrink-0">▸</span>
-                          {bullet}
-                        </li>
-                      ))}
-                    </ul>
-                  </Card>
-                </div>
-              ))}
+    <main className="w-full px-5 pb-20 pt-28 md:pt-36">
+      <h1 className="mb-12 text-4xl font-semibold tracking-tight md:text-5xl">Experience</h1>
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {experiences.map((experience, index) => (
+          <article
+            key={`${experience.company}-${experience.role}`}
+            role="button"
+            tabIndex={0}
+            onClick={() => setSelectedExperience(experience)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                setSelectedExperience(experience);
+              }
+            }}
+            className={`flex min-h-64 cursor-pointer flex-col border border-border p-6 transition-colors hover:border-foreground md:p-8 ${cardThemes[index]}`}
+          >
+            <div className="flex items-start justify-between gap-4">
+              <h2 className="text-xl font-semibold">{experience.role}</h2>
+              <span className="shrink-0 text-xs text-muted-foreground">{experience.period}</span>
             </div>
-          </div>
-        </div>
+            <p className="mt-2 text-muted-foreground">{experience.company} · {experience.location}</p>
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{experience.bullets[0]}</p>
+            <p className="mt-4 text-sm text-muted-foreground">Click to view all highlights</p>
+          </article>
+        ))}
       </div>
-    </section>
+
+      <Dialog open={selectedExperience !== null} onOpenChange={(open) => !open && setSelectedExperience(null)}>
+        {selectedExperience && (
+          <DialogContent className="w-[90vw] max-w-none md:w-[60vw]">
+            <DialogHeader>
+              <DialogTitle>{selectedExperience.role}</DialogTitle>
+              <DialogDescription>{selectedExperience.company} · {selectedExperience.location} · {selectedExperience.period}</DialogDescription>
+            </DialogHeader>
+            <ul className="space-y-3 pt-2 text-sm leading-relaxed text-muted-foreground">
+              {selectedExperience.bullets.map((bullet) => <li key={bullet} className="border-l-2 border-orange-200 pl-4">{bullet}</li>)}
+            </ul>
+          </DialogContent>
+        )}
+      </Dialog>
+    </main>
   );
 };
 
