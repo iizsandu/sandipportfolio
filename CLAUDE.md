@@ -143,6 +143,12 @@ Don't enable stricter settings without testing — it will surface many existing
 
 ---
 
+## Rules
+
+- Before building or generating any resume, always explicitly ask Sandip for permission first.
+
+---
+
 ## Owner / Contact
 
 - **Name:** Sandip Shaw
