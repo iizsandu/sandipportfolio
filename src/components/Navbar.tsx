@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+
+const socialLinks = [
+  { href: "https://github.com/iizsandu", label: "GitHub", icon: Github },
+  { href: "https://linkedin.com/in/sandip8017shaw", label: "LinkedIn", icon: Linkedin },
+  { href: "mailto:sandip8017shaw@gmail.com", label: "Email", icon: Mail },
+];
 
 const navItems = [
   { path: "/", label: "Home" },
@@ -17,11 +24,23 @@ const Navbar = () => {
       <div className="w-full px-5">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link to="/" className="text-xl font-bold text-foreground transition-colors hover:text-muted-foreground">Sandip Shaw</Link>
             <div className="hidden items-center gap-1 md:flex">
-              <a href="https://github.com/iizsandu" target="_blank" rel="noopener noreferrer" className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground" aria-label="GitHub"><Github className="h-4 w-4" /></a>
-              <a href="https://linkedin.com/in/sandip8017shaw" target="_blank" rel="noopener noreferrer" className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground" aria-label="LinkedIn"><Linkedin className="h-4 w-4" /></a>
-              <a href="mailto:sandip8017shaw@gmail.com" className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground" aria-label="Email Sandip Shaw"><Mail className="h-4 w-4" /></a>
+              {socialLinks.map(({ href, label, icon: Icon }) => (
+                <Tooltip key={label}>
+                  <TooltipTrigger asChild>
+                    <a
+                      href={href}
+                      target={href.startsWith("mailto:") ? undefined : "_blank"}
+                      rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                      className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                      aria-label={label}
+                    >
+                      <Icon className="h-4 w-4" />
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent>{label}</TooltipContent>
+                </Tooltip>
+              ))}
             </div>
           </div>
 
